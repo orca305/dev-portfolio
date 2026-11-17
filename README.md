@@ -1,34 +1,57 @@
 # 우정범 풀스택 개발자 포트폴리오
 
-## 실행
+공개 주소: https://wjb-portfolio.vercel.app
+
+Next.js, React, TypeScript 기반의 페이지 전환형 포트폴리오입니다. 확정 디자인은 2번 Developer Console입니다.
+
+## 데스크톱에서 작업 시작
 
 ```powershell
-npm install
-npm run dev -- --hostname 127.0.0.1 --port 3002
+git clone https://github.com/orca305/dev-portfolio.git
+cd dev-portfolio
+npm ci
+npm run dev
 ```
 
-http://127.0.0.1:3002 에서 확정한 2번 Developer Console 디자인을 엽니다. 소개·실무 경험·오로르·연락은 /about, /experience, /projects, /contact 페이지로 이동합니다. 기존 시안 모음은 /designs 에 보관했습니다.
+이미 저장소를 받은 경우 작업 내용을 확인한 뒤 `git pull`하고 `npm ci`를 실행합니다. Node.js 24 LTS를 기준으로 검증했습니다.
 
-- Editorial: 아이보리 편집 디자인
-- Developer Console: 다크 콘솔
-- Blueprint: 블루 사이드바 대시보드
-- Bold / Raw: 오렌지 브루탈리즘
-- Quiet Studio: 웜 미니멀
+## 페이지
 
-각 시안은 `/design/1/home` 형식으로 접근하며 home / about / experience / projects / contact 페이지가 있습니다. 상단 시안 번호를 바꾸면 현재 페이지를 유지하며 다른 스타일을 확인할 수 있습니다.
+- `/`: 첫 화면
+- `/about`: 소개, 기술, 학력, 자격증 이미지 확대
+- `/experience`: 03 실무 경험. 프로젝트 한 개씩 표시하며 이전·다음 및 번호 버튼으로 전환
+- `/projects`: 오로르 실제 개발 화면 4개와 확대 보기
+- `/contact`: 연락
+- `/designs`: 기존 디자인 시안 보관
 
-## 오로르 미리보기
+## 내용 수정 위치
 
-프로젝트 페이지는 `C:/dev/easy-law-ai/frontend`의 실제 화면 구성을 참고한 독립 미리보기를 제공합니다. 대화, 법규 검색, 판례 검색 화면을 전환할 수 있습니다. 미리보기에는 데이터 조회나 AI 응답이 연결되어 있지 않습니다.
+- 프로젝트 제목, 기간, 담당 업무, 문제 해결: `app/data.ts`의 `experiences`
+- 프로젝트 전환 및 표시 구조: `app/experience-carousel.tsx`
+- 학력과 페이지 소개: `app/portfolio.tsx`
+- 자격증 표시·확대 기능: `app/certificates.tsx`
+- 자격증 공개 이미지: `public/certificates/`
+- 전체 디자인과 안내 문구 크기: `app/globals.css`
+- 오로르 소개와 스타일: `app/aurore-preview.tsx`, `app/aurore-preview.module.css`
 
-실제 사이트 연결 탭 및 크게 열기는 http://127.0.0.1:3000 의 기존 오로르 개발 서버에 연결합니다. 해당 서버의 일부 스타일 파일이 오류를 반환하여 독립 미리보기를 기본으로 사용합니다. 외부 배포 시 로컬 주소를 실제 배포 주소로 바꿔야 합니다.
+프로젝트 배열에 항목을 추가하면 프로젝트 개수와 이동 버튼도 함께 반영됩니다. 담당 업무와 문제 해결 내용은 접기 없이 표시됩니다.
 
-## 검증
+## 반영 기준
+
+- 국무조정실 규제정보화시스템 유지관리: 2026.01.01부터 2026.11.17 현재 진행 중
+- 한국방송통신대학교 컴퓨터과학과: 2025.03 입학, 재학 중
+- 충남대학교 회계학과: 2009.03–2016.02, 학사 졸업. 졸업 연도는 사용자 확인값 사용
+- SQLD: 2026.11.17 발급된 유효기간 영구 증빙으로 교체
+
+자격증은 생년월일, 자격번호, 문서 확인 코드를 가린 공개용 이미지입니다. 원본 PDF, 경력 문서, 임시 추출 자료와 환경설정 비밀값은 Git과 배포 대상에 넣지 않습니다.
+
+## 검사와 배포
 
 ```powershell
 npm run typecheck
 npm run build
 ```
 
-정적 배포 결과는 `out/`에 생성됩니다. 공공기관 프로젝트의 실제 코드 및 내부 화면은 포함하지 않습니다. 공개 전 프로젝트·기관명 공개 범위, 실제 참여 기간과 소속을 확인해야 합니다.
+정적 결과는 `out/`에 생성됩니다. Vercel 프로젝트는 `wjb-portfolio`입니다. `vercel.json`은 Next.js 배포 설정이며, 계정 로그인 후 Vercel CLI로 연결할 수 있습니다. GitHub 원격 저장소와 Vercel의 자동 배포 연결 여부는 별도로 확인해야 합니다.
 
+기존 Sites 주소는 공개를 종료했습니다. `.openai/hosting.json`은 이전 사이트 식별 기록이며 새 Vercel 배포에는 사용하지 않습니다.

@@ -1,0 +1,13 @@
+.git
+.openai
+.next
+out
+node_modules
+.env*
+design-studies.jpg
+*.tar.gz
+*.tsbuildinfo
+aurore-showcase.jpg
+
+.tools
+tmp
