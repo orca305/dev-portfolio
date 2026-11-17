@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { concepts } from '../portfolio';
+export default function Gallery() {
+ return <main className="gallery"><header className="gallery-header"><Link href="/">WJB<span> / DESIGN STUDIES</span></Link><span>PORTFOLIO · 2026</span></header><div className="gallery-intro"><p className="kicker">FIVE DIRECTIONS, ONE DEVELOPER.</p><h1>다섯 가지 분위기.<br/>같은 개발자, 다른 첫인상.</h1><p>마음에 드는 시안을 열어 페이지를 넘겨보세요.<br/>프로젝트 페이지에서 실제 오로르 사이트를 볼 수 있습니다.</p></div><div className="concept-grid">{concepts.map((c,i)=><Link key={c.name} href={`/design/${i+1}/home`} className={`concept-card concept-${i+1}`}><div className="miniature"><div className="mini-brand">{i===1?'> wjb.dev':i===3?'WJB®':'WJB.'}<small>PORTFOLIO / 0{i+1}</small></div><div className="mini-body"><span className="mini-label">FULL-STACK DEVELOPER</span><strong>{c.headline}</strong><div className="mini-art"><i/><i/><i/></div><span className="mini-bottom">우정범 · Java / SQL / Linux <b>↗</b></span></div></div><div className="concept-caption"><span>0{i+1} / {c.name}</span><b>시안 열기 ↗</b></div><p>{c.description}</p></Link>)}</div><footer className="gallery-footer">색상, 레이아웃, 글자, 정보 배치를 다르게 구성한 탐색용 시안입니다.<span>우정범 · Full-Stack Developer</span></footer></main>;
+}
+
