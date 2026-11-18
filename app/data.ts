@@ -1,8 +1,11 @@
-export const experiences = [
+export interface Experience { no: string; period: string; ongoing: boolean; category: string; title: string; summary: string; tags: string[]; tasks: string[]; story?: string; storyTitle?: string; }
+
+export const experiences: Experience[] = [
   {
     no: '01',
     period: '2024.02.13 — 2024.12.31',
     ongoing: false,
+    storyTitle: '기능 개선 경험',
     category: 'SYSTEM DEVELOPMENT',
     title: '연계솔루션 개발',
     summary:

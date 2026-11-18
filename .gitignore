@@ -12,3 +12,4 @@ aurore-showcase.jpg
 .tools/
 tmp/
 *.bundle
+.vercel

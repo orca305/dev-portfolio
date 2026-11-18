@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import AurorePreview from './aurore-preview';
-import { skills } from './data';
+import type { ReactNode } from 'react';
+import { ProjectsIndex } from './project-pages';
+import { skills, experiences } from './data';
 import ExperienceCarousel from './experience-carousel';
 import Certificates from './certificates';
 export const concepts = [
@@ -34,18 +35,18 @@ export const sections = [
   { id: 'home', label: '첫 페이지', en: 'Overview' },
   { id: 'about', label: '소개', en: 'About' },
   { id: 'experience', label: '실무 경험', en: 'Experience' },
-  { id: 'projects', label: '오로르', en: 'AURORE' },
-  { id: 'mini-projects', label: '미니프로젝트', en: '미니프로젝트' },
-  { id: 'contact', label: '연락', en: 'Contact' },
+  { id: 'projects', label: '프로젝트', en: 'Projects' },  { id: 'contact', label: '연락', en: 'Contact' },
 ];
 export default function Portfolio({
   style,
   section,
   selected = false,
+  children,
 }: {
   style: number;
   section: string;
   selected?: boolean;
+  children?: ReactNode;
 }) {
   const concept = concepts[style - 1],
     index = sections.findIndex((s) => s.id === section);
@@ -137,7 +138,7 @@ export default function Portfolio({
                 </div>
                 <div className="hero-meta">
                   <span>Next.js · Java · Spring · SQL · Linux</span>
-                  <span>SELECTED WORK / 01—04</span>
+                  <span>SELECTED WORK / 01—{String(experiences.length).padStart(2, '0')}</span>
                 </div>
               </div>
               <aside className="hero-visual">
@@ -264,134 +265,10 @@ export default function Portfolio({
               </p>
             </>
           )}
-          {section === 'projects' && (
-            <>
-              <div className="project-heading">
-                <div>
-                  <p className="kicker">04 / PERSONAL PROJECT</p>
-                  <h1>직접 설계하고 구현한 프로젝트.</h1>
-                  <p>
-                    실무에서 경험한 기술을 바탕으로 AI 서비스와 데이터 처리
-                    도구를 개발하고 있습니다. 문제 정의부터 시스템 설계, 구현과
-                    검증까지 직접 수행한 프로젝트를 소개합니다.
-                  </p>
-                </div>
-                <div className="actions">
-                  <a
-                    className="action"
-                    href="https://github.com/orca305"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    소스 보기 ↗
-                  </a>
-                </div>
-              </div>
-              <AurorePreview />
-              <div className="project-bottom">
-                <span>
-                  <b>실제 서비스 화면.</b> 변경 비교 · 시행 이력 · 법규 검색 ·
-                  대화
-                </span>
-                <span>Next.js / NestJS / FastAPI / PostgreSQL</span>
-              </div>
-              <p className="fine-print">
-                실행 중인 오로르 개발 서버에서 직접 촬영한 화면입니다. 서비스의
-                실제 구성과 조회 결과를 보여주며, 포트폴리오에서는 이미지로
-                제공합니다.
-              </p>
-            </>
-          )}
-          {section === 'mini-projects' && (
-            <>
-              <PageTitle
-                no="05"
-                title="작게 만들고, 끝까지 연결합니다."
-                subtitle="새로운 기술을 직접 적용하며 입력부터 결과까지 구현한 미니프로젝트입니다."
-              />
-              <article
-                className="mini-project-card"
-                aria-labelledby="quizforge-title"
-              >
-                <div className="mini-project-intro">
-                  <p className="kicker">01 / AI QUIZ APPLICATION</p>
-                  <h2 id="quizforge-title">QuizForge</h2>
-                  <p className="mini-project-summary">
-                    학습 자료를 퀴즈로,
-                    <br />
-                    풀이를 복습으로.
-                  </p>
-                  <p>
-                    주제나 텍스트·TXT 파일을 바탕으로 AI가 문제를 만들고, 답안을
-                    제출하면 서버에서 채점해 정답·해설과 원문 근거를 보여주는
-                    학습 도구입니다.
-                  </p>
-                  <div className="tags">
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>Next.js</span>
-                    <span>TypeScript</span>
-                    <span>Gemini</span>
-                  </div>
-                  <a
-                    className="action primary"
-                    href="https://github.com/orca305/QuizForge"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub에서 보기 <span>↗</span>
-                  </a>
-                  <p className="fine-print">
-                    개발 중 · 로컬 MVP
-                    <br />
-                    2026.11.18 기준 / 서비스 공개 배포 전
-                  </p>
-                </div>
-                <div className="mini-project-details">
-                  <h3>구현한 기능</h3>
-                  <ol className="mini-project-flow">
-                    <li>
-                      <strong>자료 입력과 출제 설정</strong>
-                      <p>
-                        주제·직접 입력·UTF-8 TXT 불러오기, 난이도와 문항 수
-                        설정, 객관식·OX·단답형 선택
-                      </p>
-                    </li>
-                    <li>
-                      <strong>AI 퀴즈 생성과 문제 풀이</strong>
-                      <p>
-                        Gemini 기반 문제 생성, 입력·응답 구조 검증, 생성 대기 및
-                        오류 안내, 유형별 답안 작성
-                      </p>
-                    </li>
-                    <li>
-                      <strong>서버 채점과 결과 확인</strong>
-                      <p>
-                        정답을 인증 암호화 토큰으로 보호하고 서버에서 채점. 제출
-                        후 점수·정답·해설과 텍스트 모드 원문 근거 표시
-                      </p>
-                    </li>
-                  </ol>
-                  <div className="mini-project-note">
-                    <h3>개발 포인트</h3>
-                    <p>
-                      Next.js 화면과 FastAPI 업무 로직을 분리하고, 생성 응답에서
-                      정답과 해설을 제외했습니다. TXT 파일은 브라우저에서 읽고,
-                      사용자가 내용을 확인하고 AI 전송에 동의한 뒤에만 생성
-                      요청을 보냅니다.
-                    </p>
-                    <p>
-                      외부 AI 호출 없이 검증하는 백엔드 테스트 112개와 TXT 입력
-                      테스트 9개를 통과했습니다.
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </>
-          )}
+          {section === 'projects' && (children ?? <ProjectsIndex/>)}
           {section === 'contact' && (
             <div className="contact-layout">
-              <p className="kicker">06 / LET’S CONNECT</p>
+              <p className="kicker">05 / LET’S CONNECT</p>
               <h1>
                 다음 연결은,
                 <br />

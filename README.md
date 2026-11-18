@@ -20,7 +20,9 @@ npm run dev
 - `/`: 첫 화면
 - `/about`: 소개, 기술, 학력, 자격증 이미지 확대
 - `/experience`: 03 실무 경험. 프로젝트 한 개씩 표시하며 이전·다음 및 번호 버튼으로 전환
-- `/projects`: 오로르 실제 개발 화면 4개와 확대 보기
+- `/projects`: AURORE·QuizForge·TableFlow 목록
+- `/projects/aurore`, `/projects/quizforge`, `/projects/tableflow`: 공통 구조의 프로젝트 상세 소개
+- `/mini-projects`: 기존 주소 호환. `/projects`로 정적 이동
 - `/contact`: 연락
 - `/designs`: 기존 디자인 시안 보관
 
@@ -55,3 +57,19 @@ npm run build
 정적 결과는 `out/`에 생성됩니다. Vercel 프로젝트는 `wjb-portfolio`입니다. `vercel.json`은 Next.js 배포 설정이며, 계정 로그인 후 Vercel CLI로 연결할 수 있습니다. GitHub 원격 저장소와 Vercel의 자동 배포 연결 여부는 별도로 확인해야 합니다.
 
 기존 Sites 주소는 공개를 종료했습니다. `.openai/hosting.json`은 이전 사이트 식별 기록이며 새 Vercel 배포에는 사용하지 않습니다.
+
+## 개인 프로젝트 소개와 화면 관리
+
+`app/project-data.ts`에서 제목·소개·상태·기술·구현 기능·계획 기능·아키텍처·개발 경험·GitHub·배포 주소·화면 설명을 수정합니다. UI 코드를 수정할 필요가 없습니다.
+
+- QuizForge 배포 주소: https://quizforge-nine-chi.vercel.app/
+- AURORE 정식 저장소: https://github.com/orca305/AURORE
+- 프로젝트 목록·상세 UI: `app/project-pages.tsx`
+- 공통 화면 선택·이전/다음·확대 UI: `app/project-gallery.tsx`
+- 실무 경험의 `storyTitle`을 생략하면 `문제 해결 경험`으로 표시합니다.
+
+화면은 `public/aurore`, `public/quizforge`, `public/tableflow`에 실제 촬영한 이미지를 넣고 `screenshots`에 `{ src, title, description }`를 추가합니다. `screenshots: []`는 정상적인 빈 갤러리 상태입니다. TableFlow는 설계·개발 준비 단계로 표시하며 계획 기능과 구현 기능을 구분합니다. QuizForge에는 공개 사이트에서 실제 촬영한 설정·텍스트 입력 화면만 포함했습니다. 문제 풀이와 채점 결과 사진은 이후 추가할 수 있습니다.
+
+공유 이미지: `public/social/`. 페이지별 canonical·Open Graph는 `app/seo.ts`와 각 페이지의 metadata에서 관리합니다. 기존 5개 디자인 시안과 과거 mini-projects 경로도 유지합니다.
+
+추가 검증: `npm run build` 후 `node scripts/verify-export.mjs`. 운영 배포나 GitHub 업로드는 변경 검토 및 사용자 승인 뒤 진행합니다. 기존 Vercel 프로젝트 `wjb-portfolio`를 그대로 사용합니다.

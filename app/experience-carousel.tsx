@@ -61,7 +61,7 @@ export default function ExperienceCarousel() {
           </section>
           {project.story && (
             <section className="experience-case">
-              <h3>경험</h3>
+              <h3>{project.storyTitle ?? '문제 해결 경험'}</h3>
               <p>{project.story}</p>
             </section>
           )}
