@@ -104,7 +104,7 @@ export const projects: PortfolioProject[] = [
       '성능: Oracle→PostgreSQL 100만 행(5개 컬럼)을 41.4초(약 24,200행/초)에 이관했고, 분할마다 걸린 시간이 거의 일정했습니다(백엔드 -Xmx768m 기준).',
       '실서버 테스트로 Oracle IDENTITY 검사 버그(ORA-17027)를 찾아 수정했고, OFFSET 방식의 뒤쪽 청크 지연을 keyset 페이지로 바꿔 해소했습니다. 한계: 인증이 없어 인터넷에 그대로 공개할 수 없고, MySQL·MariaDB·Oracle은 DDL이 롤백되지 않아 적재 실패 시 빈 테이블이 남을 수 있으며, CI에는 DB 컨테이너가 없어 실서버 테스트는 로컬에서만 실행합니다.',
     ],
-    github: 'https://github.com/orca305/TableFlow',
+    github: 'https://github.com/orca305/TableFlow', liveUrl: 'https://table-flow-blond.vercel.app/',
     screenshotNote: '로컬에서 실행한 TableFlow의 실제 화면입니다(2026-11-22 기준). Vercel 소개용 배포는 백엔드가 없어 화면만 볼 수 있고 기능은 동작하지 않습니다.',
     screenshots: [
       { src: '/tableflow/01-workspace-validated.png', title: '파일 변환 · 검증', headline: '올리고, 고치고, 내보내기.', path: '파일 변환', description: '샘플 CSV를 불러와 컬럼 매핑과 검증을 마친 워크스페이스 화면입니다. 라이트·다크 테마를 지원합니다.', points: ['사용법: "샘플 데이터로 시작" 또는 파일(CSV/XLSX/PDF/이미지) 업로드', '컬럼 이름·자료형·필수값을 정하고 "데이터 검증"으로 오류 셀과 중복 행 확인', '대상(Oracle/PostgreSQL/MySQL/MariaDB SQL, Excel, CSV)을 골라 다운로드하거나 DB에 적재'] },
