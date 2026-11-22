@@ -53,7 +53,7 @@ export const projects: PortfolioProject[] = [
       '검증: 백엔드 테스트 156개와 AI 서버 테스트 68개 통과. 한계: 평가는 직접 만든 합성 질문(표본 30~100개)이고 전문가 검토가 없으며, 단일 PC 운영이라 전체 공개는 하지 않고 지인 테스트까지만 열었습니다. 정보 제공 서비스이며 법률 자문이 아닙니다.',
     ],
     github: 'https://github.com/orca305/AURORE', liveUrl: 'https://www.aurore-law.com', logo: '/aurore/mark.png',
-    screenshotNote: '아래 화면은 이전 버전(UI 개편 전)의 실제 개발 서버 캡처입니다. 현재 버전은 접속 코드를 아는 지인에게만 공개 중이며, 개편한 답변 화면·관리자 화면 캡처는 추후 교체합니다.',
+    screenshotNote: '배포 사이트(www.aurore-law.com)는 지인 테스트용으로 열려 있으며 접속 코드는 123456입니다. 개발자 PC에서 운영 중이라 PC가 꺼져 있으면 접속되지 않을 수 있습니다. 아래 화면은 이전 버전(UI 개편 전)의 실제 개발 서버 캡처이며, 개편한 답변·관리자 화면 캡처는 추후 교체합니다.',
     screenshots: [
       { src: '/aurore/compare.jpg', title: '법령 변경 비교', headline: '달라진 문장을, 나란히.', path: '/legals/:id/compare', description: '비교 전·후 시행본의 조문과 부칙을 나란히 배치하고, 추가·삭제·변경된 항목과 문구를 구분하는 실제 화면입니다.', points: ['사용법: 법령 상세의 시행 이력에서 비교할 시행본 두 개를 고릅니다', '추가·삭제·변경된 항목만 모아볼 수 있습니다', '조문과 부칙을 나란히 보고 원문 출처로 이동합니다'] },
       { src: '/aurore/versions.jpg', title: '시행 이력 탐색', headline: '같은 법령, 다른 시점.', path: '/legals/:id/versions', description: '하나의 법령에 저장된 여러 시행본을 시행일 기준으로 살펴보고, 기준일 조회와 조문 확인으로 이어지는 화면입니다.', points: ['사용법: 법령을 선택하면 저장된 시행본이 시행일순으로 나열됩니다', '기준일을 입력해 그날 시행 중이던 버전을 조회합니다', '시행본을 열어 조문과 원문을 확인하거나 비교 화면으로 이동합니다'] },
