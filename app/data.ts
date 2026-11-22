@@ -80,7 +80,7 @@ export const experiences: Experience[] = [
   },
   {
     no: '05',
-    period: '2026.01.01 — 현재',
+    period: '2026.01.01 —',
     ongoing: true,
     category: 'PUBLIC SERVICE',
     title: '국무조정실 규제정보화시스템 유지관리',

@@ -36,7 +36,7 @@ export default function ExperienceCarousel() {
             <p className="experience-period">
               {project.period}
               {project.ongoing && (
-                <span className="ongoing-badge">2026.11.17 현재 진행 중</span>
+                <span className="ongoing-badge">현재 진행 중</span>
               )}
             </p>
           </div>
