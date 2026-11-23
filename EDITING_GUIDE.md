@@ -104,7 +104,7 @@ git push origin main                                      # main에 올리면 Ve
 | 프로젝트 | 시작 줄 | 비고 |
 |---|---|---|
 | 프로젝트 소개 문구(`projectsIntroduction`) | 31 | 프로젝트 목록 맨 위 제목·설명 |
-| AURORE | 37 | 접속 코드 `123456`이 `usage`(첫 단계)와 `screenshotNote`(79행)에 있음. 화면 이미지 `public/aurore/` |
+| AURORE | 37 | 접속 코드 안내는 삭제함(접속 코드 없이 접속). 화면 이미지 `public/aurore/` |
 | QuizForge | 93 | 배포 주소 `quizforge-nine-chi.vercel.app`. 화면 이미지 `public/quizforge/` |
 | TableFlow | 116 | 데모 주소 `table-flow-blond.vercel.app`. 화면 이미지 `public/tableflow/` |
 
@@ -115,7 +115,7 @@ git push origin main                                      # main에 올리면 Ve
 
 **같은 수치가 여러 곳에 있으니 함께 고치세요.**
 - AURORE: 법령 5,631개·판례 14,131건·조문 299,601개는 `metrics`, `challenges`, `screenshots`의 설명에 나옵니다.
-- 접속 코드·배포 주소 `www.aurore-law.com`은 `liveUrl`, `usage`, `screenshotNote`에 나옵니다.
+- 배포 주소 `www.aurore-law.com`은 `liveUrl`과 `screenshotNote`에 나옵니다.
 - TableFlow의 테스트 수·100만 행 41.4초는 `metrics`와 `challenges`에 나옵니다.
 
 ### `app/project-pages.tsx` (프로젝트 화면의 고정 문구)
