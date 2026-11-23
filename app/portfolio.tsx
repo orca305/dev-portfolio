@@ -5,6 +5,7 @@ import { skills, experiences } from './data';
 import ExperienceCarousel from './experience-carousel';
 import Certificates from './certificates';
 import ThemeToggle from './theme-toggle';
+import ScrollButtons from './scroll-buttons';
 export const concepts = [
   {
     name: 'Editorial',
@@ -58,6 +59,7 @@ export default function Portfolio({
     <div
       className={`portfolio concept-${style}${selected ? ' selected-portfolio' : ''}`}
     >
+      {selected && <ScrollButtons />}
       {!selected && (
         <div className="review-bar">
           <Link href="/designs">← 시안 전체 보기</Link>

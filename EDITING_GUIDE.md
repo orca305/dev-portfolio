@@ -146,3 +146,7 @@ git push origin main                                      # main에 올리면 Ve
 - 버튼 코드·문구: `app/theme-toggle.tsx`(버튼 글자 `Light`/`Dark`와 접근성 문구), 헤더 배치는 `app/portfolio.tsx`의 `<ThemeToggle />`.
 - 라이트 색: `app/globals.css` 맨 아래 `:root[data-theme="light"] .concept-2`의 변수(`--bg`, `--surface`, `--text`, `--muted`, `--accent`, `--line`)만 바꾸면 됩니다. 다크 색은 같은 파일 4행의 `.concept-2`입니다.
 - 프로젝트 화면 갤러리(`app/aurore-preview.module.css`)는 양쪽 모드에서 모두 어두운 녹색 틀로 표시합니다.
+
+## 7. 맨 위로 / 맨 아래로 버튼
+- 화면 오른쪽 아래의 ▲▼ 버튼입니다. 코드는 `app/scroll-buttons.tsx`, 배치는 `app/portfolio.tsx`의 `<ScrollButtons />`, 모양은 `app/globals.css` 맨 아래 `.scroll-buttons`입니다.
+- 버튼 설명 문구(툴팁)는 `scroll-buttons.tsx`의 `aria-label`/`title`("맨 위로", "맨 아래로")에서 바꿉니다.
