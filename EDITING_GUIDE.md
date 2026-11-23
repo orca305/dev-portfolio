@@ -134,3 +134,10 @@ git push origin main                                      # main에 올리면 Ve
 3. 모바일 폭에서도 문장이 넘치지 않는지 봅니다(브라우저 폭을 좁혀서).
 4. `npm run typecheck`, `npm run build`가 오류 없이 끝나는지 확인합니다.
 5. 푸시한 뒤 1~2분 후 https://wjb-portfolio.vercel.app 에서 반영을 확인합니다.
+
+## 6. 라이트/다크 모드
+- 상단 오른쪽의 토글 버튼(☀ Light / ☾ Dark)으로 전환하며, 선택은 브라우저(`localStorage`의 `portfolio-theme`)에 저장됩니다. **저장된 값이 없는 첫 방문은 항상 다크**입니다.
+- 기본값 변경: `app/layout.tsx`의 `themeScript`에서 `t==='light'||t==='dark'?t:'dark'`의 마지막 `'dark'`를 `'light'`로 바꿉니다.
+- 버튼 코드·문구: `app/theme-toggle.tsx`(버튼 글자 `Light`/`Dark`와 접근성 문구), 헤더 배치는 `app/portfolio.tsx`의 `<ThemeToggle />`.
+- 라이트 색: `app/globals.css` 맨 아래 `:root[data-theme="light"] .concept-2`의 변수(`--bg`, `--surface`, `--text`, `--muted`, `--accent`, `--line`)만 바꾸면 됩니다. 다크 색은 같은 파일 4행의 `.concept-2`입니다.
+- 프로젝트 화면 갤러리(`app/aurore-preview.module.css`)는 양쪽 모드에서 모두 어두운 녹색 틀로 표시합니다.

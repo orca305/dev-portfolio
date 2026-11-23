@@ -46,3 +46,13 @@
 .project-steps li>span{font-size:13px;font-weight:700;color:var(--accent);padding-top:4px}
 .project-steps p{margin:0}
 @media(max-width:700px){.project-metrics{grid-template-columns:1fr 1fr}.project-metrics strong{font-size:24px}.project-steps li{grid-template-columns:34px 1fr}}
+/* 라이트/다크 테마: 기본은 다크(.concept-2)이고, 라이트는 같은 변수를 밝은 색으로 바꿉니다. */
+:root[data-theme="light"] .concept-2{--bg:#f4f6f0;--surface:#e9eee2;--text:#1d2620;--muted:#566052;--accent:#2f6b1f;--line:#c6d1bd;color-scheme:light}
+:root[data-theme="light"] .concept-2 .page-content{background-image:linear-gradient(#2f6b1f0d 1px,transparent 1px),linear-gradient(90deg,#2f6b1f0d 1px,transparent 1px)}
+:root[data-theme="light"] .concept-2 .hero-visual{box-shadow:0 0 40px #2f6b1f14}
+:root[data-theme="light"] .project-image-dialog::backdrop,:root[data-theme="light"] .certificate-dialog::backdrop{background:#0008}
+.header-github{white-space:nowrap}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;margin-left:14px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--text);font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:700px){.theme-toggle{margin-left:8px;padding:0 9px;height:30px;font-size:12px}.theme-toggle span:last-child{display:none}}

@@ -4,7 +4,7 @@ import { siteUrl, pageMetadata, pageDescriptions } from './seo';
 
 export const metadata: Metadata = { metadataBase: new URL(siteUrl), ...pageMetadata(pageDescriptions.home.title, pageDescriptions.home.description, '/') };
 
-const themeScript = `(function(){try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}})()`;
+const themeScript = `(function(){try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:'dark'}catch(e){}})()`;
 
 export default function RootLayout({
   children,

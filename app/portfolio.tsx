@@ -4,6 +4,7 @@ import { ProjectsIndex } from './project-pages';
 import { skills, experiences } from './data';
 import ExperienceCarousel from './experience-carousel';
 import Certificates from './certificates';
+import ThemeToggle from './theme-toggle';
 export const concepts = [
   {
     name: 'Editorial',
@@ -35,7 +36,8 @@ export const sections = [
   { id: 'home', label: '첫 페이지', en: 'Overview' },
   { id: 'about', label: '소개', en: 'About' },
   { id: 'experience', label: '실무 경험', en: 'Experience' },
-  { id: 'projects', label: '프로젝트', en: 'Projects' },  { id: 'contact', label: '연락', en: 'Contact' },
+  { id: 'projects', label: '프로젝트', en: 'Projects' },
+  { id: 'contact', label: '연락', en: 'Contact' },
 ];
 export default function Portfolio({
   style,
@@ -106,6 +108,7 @@ export default function Portfolio({
           >
             GitHub ↗
           </a>
+          <ThemeToggle />
         </header>
         <main
           className={`page-content page-${section}`}
