@@ -108,6 +108,11 @@ git push origin main                                      # main에 올리면 Ve
 | QuizForge | 93 | 배포 주소 `quizforge-nine-chi.vercel.app`. 화면 이미지 `public/quizforge/` |
 | TableFlow | 116 | 데모 주소 `table-flow-blond.vercel.app`. 화면 이미지 `public/tableflow/` |
 
+**항목 작성 형식 (가독성용)**
+- `features`, `usage`, `challenges`, `limitations`는 한 항목을 `'제목::설명'` 형식으로 씁니다. `::` 앞은 굵은 제목, 뒤는 짧은 설명으로 표시됩니다. `::`가 없으면 제목 없이 설명만 나옵니다.
+- `purpose`, `architecture`는 문장 사이에 `\n`을 넣으면 문단이 나뉩니다. 한 문단은 2~3문장 이내로 짧게 쓰는 것을 권장합니다.
+- 설명은 한 항목당 1~2문장으로 쓰고, 긴 내용은 항목을 나눠 주세요.
+
 **같은 수치가 여러 곳에 있으니 함께 고치세요.**
 - AURORE: 법령 5,631개·판례 14,131건·조문 299,601개는 `metrics`, `challenges`, `screenshots`의 설명에 나옵니다.
 - 접속 코드·배포 주소 `www.aurore-law.com`은 `liveUrl`, `usage`, `screenshotNote`에 나옵니다.
